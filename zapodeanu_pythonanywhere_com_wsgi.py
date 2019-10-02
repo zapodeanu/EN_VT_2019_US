@@ -2,7 +2,7 @@
 import sys
 import os
 
-path = '/home/zapodeanu/simple_webhook_receiver'
+path = '/home/gabiz/EN_VT_2019_US'
 if path not in sys.path:
     sys.path.append(path)
 

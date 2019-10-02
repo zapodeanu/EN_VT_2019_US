@@ -38,7 +38,7 @@ WEBEX_TEAMS_ROOM = 'Webhooks Notifications'
 
 WEBHOOK_URL = 'https://gabiz.pythonanywhere.com/webhook'
 WEBHOOK_USERNAME = 'admin'
-WEBHOOK_PASSWORD = 'cisco'
+WEBHOOK_PASSWORD = 'c!sc0'
 
 DNAC_URL = 'https://10.93.130.50'
 

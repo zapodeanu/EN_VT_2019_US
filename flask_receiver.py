@@ -43,9 +43,7 @@ from urllib3.exceptions import InsecureRequestWarning  # for insecure https warn
 os.environ['TZ'] = 'America/Los_Angeles'  # define the timezone for PST
 time.tzset()  # adjust the timezone, more info https://help.pythonanywhere.com/pages/SettingTheTimezone/
 
-
 urllib3.disable_warnings(InsecureRequestWarning)  # disable insecure https warnings
-
 
 from config import WEBEX_TEAMS_AUTH, WEBEX_TEAMS_URL, WEBEX_TEAMS_ROOM
 from config import WEBHOOK_USERNAME, WEBHOOK_PASSWORD, WEBHOOK_URL

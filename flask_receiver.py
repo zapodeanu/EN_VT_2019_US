@@ -58,19 +58,18 @@ app.config['BASIC_AUTH_FORCE'] = True
 basic_auth = BasicAuth(app)
 
 
-@app.route('/')  # create a page for testing the flask framework
+@app.route('/')  # create a decorator for testing the Flask framework
 @basic_auth.required
 def index():
     return '<h1>Flask Receiver App is Up!</h1>', 200
 
 
-@app.route('/dashboard')  # create a page for the dashboard
+@app.route('/dashboard')  # create a decorator for the dashboard
 def dashboard():
     return '<h1>Dashboard To DO!</h1>', 200
 
 
-@app.route('/webhook', methods=['POST'])  # create a route for /webhook, method POST
-@basic_auth.required
+@app.route('/webhook', methods=['POST'])  # create a decorator for /webhook, method POST
 def webhook():
     if request.method == 'POST':
         print('Webhook Received')
@@ -129,7 +128,7 @@ def webhook():
                 # post message in teams space, with url for the issue
                 post_space_url_message(WEBEX_TEAMS_ROOM, teams_message, url)
 
-        except:
+        finally:
             pass
         try:
             if 'values' in request_json:
@@ -181,7 +180,7 @@ def webhook():
                 # post message in teams space, with url for the issue
                 teams_message = 'Issue Details:  Click Here\n'
                 post_space_url_message(WEBEX_TEAMS_ROOM, teams_message, url)
-        except:
+        finally:
             pass
         return {'response': 'Notification Received'}, 200
     else:

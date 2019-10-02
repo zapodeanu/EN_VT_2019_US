@@ -25,7 +25,7 @@ def pprint(json_data):
 
 """
 
-url = 'http://127.0.0.1:5000/webhook'
+url = 'http://127.0.0.1:5000/webhook'  # to test the Flask Web App running local
 header = {'content-type': 'application/json'}
 response = requests.post(url, auth=basic_auth, data=json.dumps(dnac_param), headers=header, verify=False)
 response_json = response.json()
@@ -33,10 +33,9 @@ print(response_json)
 
 """
 
-import requests
-import json
-
 basic_auth = HTTPBasicAuth(WEBHOOK_USERNAME, WEBHOOK_PASSWORD)
+
+# test the Webhook with a Cisco DNA Center notitification
 
 url = WEBHOOK_URL
 header = {'content-type': 'application/json'}

@@ -33,7 +33,7 @@ __license__ = "Cisco Sample Code License, Version 1.1"
 # the Webhook username and password
 
 WEBEX_TEAMS_URL = 'https://api.ciscospark.com/v1'
-WEBEX_TEAMS_AUTH = 'Bearer ' + ''
+WEBEX_TEAMS_AUTH = 'Bearer ' + 'Your Webex Teams Password'
 WEBEX_TEAMS_ROOM = 'Webhooks Notifications'
 
 WEBHOOK_URL = 'https://gabiz.pythonanywhere.com/webhook'

@@ -252,7 +252,6 @@ def post_space_markdown_message(space_name, message):
 
 
 def post_space_url_message(space_name, message, url):
-
     """
     This function will post an URL to the Webex Teams space with the {space_name}
     Call to function get_space_id(space_name) to find the space_id

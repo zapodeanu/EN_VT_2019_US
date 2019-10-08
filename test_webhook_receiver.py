@@ -74,6 +74,10 @@ response_json = response.json()
 print(response_json)
 
 
+# print the HTTP BasicAuth encoding - needed for Cisco DNA Center webhook configuration
+print('\nThe HTTP Basic Auth you will need for the Webhooks Configuration is:\n' + response.request.headers['Authorization'])
+
+
 time.sleep(5)
 # test the Webhook with a Cisco SD-WAN notification
 

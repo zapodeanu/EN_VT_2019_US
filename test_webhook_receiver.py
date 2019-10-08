@@ -1,7 +1,37 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+
+Cisco DNA Center Client Information using the MAC Address
+
+Copyright (c) 2019 Cisco and/or its affiliates.
+
+This software is licensed to you under the terms of the Cisco Sample
+Code License, Version 1.1 (the "License"). You may obtain a copy of the
+License at
+
+               https://developer.cisco.com/docs/licenses
+
+All use of the material herein must be in accordance with the terms of
+the License. All rights not expressly granted by the License are
+reserved. Unless required by applicable law or agreed to separately in
+writing, software distributed under the License is distributed on an "AS
+IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
+or implied.
+
+"""
+
+__author__ = "Gabriel Zapodeanu TME, ENB"
+__email__ = "gzapodea@cisco.com"
+__version__ = "0.1.0"
+__copyright__ = "Copyright (c) 2019 Cisco and/or its affiliates."
+__license__ = "Cisco Sample Code License, Version 1.1"
+
 import requests
 import json
 import datetime
 import urllib3
+import base64
 from requests.auth import HTTPBasicAuth  # for Basic Auth
 from config import WEBHOOK_URL, WEBHOOK_USERNAME, WEBHOOK_PASSWORD
 
@@ -35,10 +65,21 @@ print(response_json)
 
 basic_auth = HTTPBasicAuth(WEBHOOK_USERNAME, WEBHOOK_PASSWORD)
 
-# test the Webhook with a Cisco DNA Center notitification
+# test the Webhook with a Cisco DNA Center notification
+
+url = WEBHOOK_URL
+header = {'content-type': 'application/json'}
+response = requests.post(url, auth=basic_auth, data=json.dumps(dnac_param), headers=header, verify=False)
+response_json = response.json()
+print(response_json)
+
+# test the Webhook with a Cisco SD-WAN notification
 
 url = WEBHOOK_URL
 header = {'content-type': 'application/json'}
 response = requests.post(url, auth=basic_auth, data=json.dumps(sdwan_param), headers=header, verify=False)
 response_json = response.json()
 print(response_json)
+
+# print the HTTP BasicAuth encoding - needed for Cisco DNA Center webhook configuration
+print('\nThe HTTP Basic Auth you will need for the Webhooks Configuration is:\n' + response.request.headers['Authorization'])

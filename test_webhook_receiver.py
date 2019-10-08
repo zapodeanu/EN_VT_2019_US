@@ -71,10 +71,10 @@ url = WEBHOOK_URL
 header = {'content-type': 'application/json'}
 response = requests.post(url, auth=basic_auth, data=json.dumps(dnac_param), headers=header, verify=False)
 response_json = response.json()
-print(response_json)
+print('\n', response_json)
 
 # print the HTTP BasicAuth encoding - needed for Cisco DNA Center webhook configuration
-print('\nThe HTTP Basic Auth you will need for the Webhooks Configuration is:\n' + response.request.headers['Authorization'])
+print('\nThe HTTP Basic Auth you will need for the Webhooks Configuration is:\n' + response.request.headers['Authorization'], '\n')
 
 """
 time.sleep(5)

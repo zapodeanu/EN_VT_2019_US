@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-Cisco DNA Center Client Information using the MAC Address
+
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -128,10 +128,10 @@ def webhook():
                 # post message in teams space, with url for the issue
                 post_space_url_message(WEBEX_TEAMS_ROOM, teams_message, url)
 
-        finally:
+        except:
             pass
         try:
-            if 'values' in request_json:
+            if request_json['values'] != {}:
                 sdwan_notification = request_json
 
                 # save all info to variables, prepare to save to file

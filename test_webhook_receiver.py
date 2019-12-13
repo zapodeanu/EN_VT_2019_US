@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 
-Cisco DNA Center Client Information using the MAC Address
+
 
 Copyright (c) 2019 Cisco and/or its affiliates.
 
@@ -39,7 +39,6 @@ from config import WEBHOOK_URL, WEBHOOK_USERNAME, WEBHOOK_PASSWORD
 from urllib3.exceptions import InsecureRequestWarning  # for insecure https warnings
 urllib3.disable_warnings(InsecureRequestWarning)  # disable insecure https warnings
 
-basic_auth = HTTPBasicAuth('admin', 'r3c3iv3r06z')
 
 dnac_param = {"version": "", "instanceId": "84bc5a0d-b211-4c50-81e0-a142da540d45", "eventId": "NETWORK-NON-FABRIC_WIRED-1-200", "namespace": "ASSURANCE", "name": "", "description": "", "type": "NETWORK", "category": "ALERT", "domain": "Connectivity", "subDomain": "Non-Fabric Wired", "severity": 1, "source": "ndp", "timestamp": 1569449708000, "tags": "", "details": {"Type": "Network Device", "Assurance Issue Details": "This network device PDX-3850-CAMPUS is unreachable from controller. The device role is ACCESS", "Assurance Issue Priority": "P1", "Device": "10.93.130.47", "Assurance Issue Name": "Network Device 10.93.130.47 Is Unreachable From Controller", "Assurance Issue Category": "Availability", "Assurance Issue Status": "active"}, "ciscoDnaEventLink": "dna/assurance/issueDetails?issueId=84bc5a0d-b211-4c50-81e0-a142da540d45", "note": "To programmatically get more info see here - https://<ip-address>/dna/platform/app/consumer-portal/developer-toolkit/apis?apiId=8684-39bb-4e89-a6e4", "tntId": "", "context": "", "tenantId": ""}
 
